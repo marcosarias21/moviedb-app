@@ -1,13 +1,14 @@
-import './App.css';
-import useFetch from './hooks/useFetch';
-
-const API_KEY = process.env.REACT_APP_MOVIEDB_API_KEY;
+import { Route, Routes } from 'react-router-dom';
+import Navbar from './components/Navbar/Navbar';
+import Home from './pages/Home/Home';
 
 const App = () => {
-  const { data } = useFetch(`https://api.themoviedb.org/3/movie/550?api_key=${API_KEY}`);
-  console.log(data);
   return (
    <>
+    <Navbar/>
+    <Routes>
+      <Route path='/' element={<Home/>} />
+    </Routes>
    </>
   );
 };

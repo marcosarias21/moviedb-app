@@ -1,0 +1,10 @@
+$tw-bg-opacity: 1;
+$color:rgb(17, 24, 39 / $tw-bg-opacity);
+$white: #fff;
+$font-family: Arial, Helvetica, sans-serif;
+
+body{
+  background-color: $color;
+  color: $white;
+  font-family: $font-family;
+}
