@@ -1,0 +1,23 @@
+@import '../../styles/global.scss';
+
+
+.border-b{
+border-bottom: 1px solid gray ;
+
+
+.nav-link{
+  font-family: $font-family; 
+  color: $white;
+  font-weight: bold;
+  &:hover {
+    opacity: 0.6;
+    font-weight: bold;
+    transform: scale(100px);
+  }
+}
+@media (min-width: 424px) and (max-width:1023px) {
+  .collapse{
+    text-align: center;
+  }  
+}
+}
