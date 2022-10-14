@@ -1,16 +1,21 @@
 import { motion } from 'framer-motion';
+import { NavLink } from 'react-router-dom';
 
 /* eslint-disable camelcase */
 const MoviePopulars = ({
-  id, title, poster_path,
+  id, title, poster_path, release_date, vote_average,
 }) => {
   const img = `https://image.tmdb.org/t/p/w300/${poster_path}`;
   return (
-    <motion.div whileHover={{ scale: 1.1, boxShadow: '10px 10px 5px 0px rgba(0,0,0,0.51)' }} className="m-5">
+    <motion.div key={id} className="m-5">
       <div>
-        <img src={img}/>
-        <p className="fw-bold"> {title} </p>
-        <span>  </span>
+        <NavLink to={`detail/${id}`}>
+          <img src={img} alt={img}/>
+        </NavLink>
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }}>
+          <p className="fw-bold"> {title} </p>
+          <span>⭐{vote_average} |  📅{release_date} </span>
+        </motion.div>
       </div>
     </motion.div>
   );

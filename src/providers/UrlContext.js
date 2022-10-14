@@ -3,11 +3,11 @@ import { createContext, useState } from 'react';
 const urlContext = createContext();
 
 export const UrlProvider = ({ children }) => {
-  const [urlSection, setUrlSection] = useState('/');
-  const [global, setGlobal] = useState({});
+  const [movieCategory, setMovieCategory] = useState('popular');
+  const [idMovie, setIdMovie] = useState(1);
 
   const data = {
-    urlSection, setUrlSection, global, setGlobal,
+    movieCategory, setMovieCategory, idMovie, setIdMovie,
   };
 
   return (<urlContext.Provider value={data}>{children}</urlContext.Provider>);
