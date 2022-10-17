@@ -1,5 +1,9 @@
-.img-hero {
-  background-size: cover;
-  height: 70vh;
-  background-color: red;
+.section-hero{
+  height: 90vh;
+  .hero-style {
+      height: 100%;
+      width: 100%;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
 }

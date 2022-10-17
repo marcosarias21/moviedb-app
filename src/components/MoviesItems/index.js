@@ -1,1 +1,1 @@
-export { default as MoviePopulars } from './MoviePopulars';
+export { default as MovieItems } from './MovieItems';
