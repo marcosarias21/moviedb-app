@@ -1,9 +1,21 @@
+import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import './navbar.scss';
 
 const Navbar = () => {
+  const [color, setColor] = useState(false);
+  const changeColor = () => {
+    if (window.scrollY >= 90) {
+      setColor(true);
+    } else {
+      setColor(false);
+    }
+  };
+  window.addEventListener('scroll', changeColor);
+
   return (
-      <nav className="border-b navbar navbar-expand-lg d-flex justify-content-center py-4">
+    <div className={color ? 'header-active' : 'header'}>
+      <nav className="navbar navbar-expand-lg">
         <div className="container container-fluid d-flex justify-content-center">
           <a className="navbar-brand text-white" href="#"><span>MovieDB</span> - Arias</a>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -15,15 +27,16 @@ const Navbar = () => {
                 <NavLink className="nav-movies-link" aria-current="page" to='/' >Popular</NavLink>
               </li>
               <li className="nav-item px-2">
-                <NavLink className="nav-movies-link"> Top Rated </NavLink>
+                <NavLink className="nav-movies-link" to='/top_rated'> Top Rated </NavLink>
               </li>
               <li className="nav-item px-2">
-                <a className="nav-link" href="/tv">Tv Shows</a>
+                <NavLink className="nav-movies-link" href="/tv">Tv Shows</NavLink>
               </li>
             </ul>
           </div>
         </div>
       </nav>
+    </div>
   );
 };
 
