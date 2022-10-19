@@ -4,23 +4,26 @@
   align-items: center;
   justify-content: center;
   border-bottom: 1px solid;
-  
+
+
   .items-container{
+    box-shadow: -3px 4px 39px -5px rgba(0, 0, 0, 0.938);
+    border-radius: 10px;
     margin: 0px;
     padding: 0px;
-    box-shadow: -3px 4px 39px -5px rgba(0,0,0,0.73);
     margin-top: 100px;
+    width: 60%;
     height: 35rem;
     
     .info{     
-     background-color: rgba(0, 0, 0, 0.13);
-     span{
+      background-color: rgba(0, 0, 0, 0.233);
+      span{
       white-space: pre;
      }
     }
     img{
       height: 100%;
-      border-radius: 10px;
+      border-radius: 10px 0px 0px 10px;
     }  
       
   }

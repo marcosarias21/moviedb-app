@@ -7,16 +7,14 @@
     height: 100%;
     width: 100%;
     background-repeat: no-repeat;
-  }
-  
+  }  
   &::after{
+    position: absolute;
     background-image: linear-gradient(0deg, $color,transparent);
     bottom: 91px;
     content: "";
     height: 100px;
     left: 0;
-    position: absolute;
     width: 100%;
-    }
-          
+    }          
 }

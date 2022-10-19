@@ -18,7 +18,7 @@ const MovieItems = ({
             <img className='img-size' src={img} alt={img}/>
           </NavLink>
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }}>
-            <p className="fw-bold"> {title} </p>
+            <h5 className="fw-bold"> {title} </h5>
             <span>⭐{vote_average} |  📅{release_date} </span>
           </motion.div>
         </div>
