@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import setCategory from '../../helper/setCategory';
 import urlContext from '../../providers/UrlContext';
@@ -8,14 +8,18 @@ const Navbar = () => {
   const [color, setColor] = useState(false);
   const { setMovieCategory, movieCategory } = useContext(urlContext);
   const { section } = setCategory(movieCategory);
-  const changeColor = () => {
-    if (window.scrollY >= 90) {
-      setColor(true);
-    } else {
-      setColor(false);
-    }
-  };
-  window.addEventListener('scroll', changeColor);
+  useEffect(() => {
+    const changeColor = () => {
+      if (window.scrollY >= 90) {
+        setColor(true);
+      } else {
+        setColor(false);
+      }
+    };
+    return () => {
+      window.addEventListener('scroll', changeColor);
+    };
+  }, [color]);
 
   return (
     <div className={color ? 'header-active' : 'header'}>
