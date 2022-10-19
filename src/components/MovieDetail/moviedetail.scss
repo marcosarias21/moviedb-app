@@ -1,0 +1,27 @@
+.section-detail{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid;
+  
+  .items-container{
+    margin: 0px;
+    padding: 0px;
+    box-shadow: -3px 4px 39px -5px rgba(0,0,0,0.73);
+    margin-top: 100px;
+    height: 35rem;
+    
+    .info{     
+     background-color: rgba(0, 0, 0, 0.13);
+     span{
+      white-space: pre;
+     }
+    }
+    img{
+      height: 100%;
+      border-radius: 10px;
+    }  
+      
+  }
+}

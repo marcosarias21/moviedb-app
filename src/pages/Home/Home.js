@@ -8,7 +8,8 @@ import imgContext from '../../providers/ImgHeroContext';
 const API_KEY = process.env.REACT_APP_SECRET_KEY;
 
 const Home = () => {
-  const { movieCategory, idMovie } = useContext(urlContext);
+  const { movieCategory } = useContext(urlContext);
+  console.log(movieCategory);
   const { image } = useContext(imgContext);
   const [dataMoviePopular, setDataMoviePopular] = useState([]);
   const [page, setPage] = useState(2);
@@ -23,7 +24,6 @@ const Home = () => {
     setPage(page + 1);
     setDataMoviePopular([...dataMoviePopular, ...dataPage.data.results]);
   };
-  console.log(dataMoviePopular);
 
   return (
     <>
@@ -32,7 +32,7 @@ const Home = () => {
         {
           dataMoviePopular?.map((dataMovie, index) => (
           <MovieItems key={index} {...dataMovie}
-          idMovie={idMovie}/>
+         />
           ))
         }
       </div>

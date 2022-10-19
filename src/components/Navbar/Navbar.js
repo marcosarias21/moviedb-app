@@ -1,9 +1,11 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import urlContext from '../../providers/UrlContext';
 import './navbar.scss';
 
 const Navbar = () => {
   const [color, setColor] = useState(false);
+  const { setMovieCategory } = useContext(urlContext);
   const changeColor = () => {
     if (window.scrollY >= 90) {
       setColor(true);
@@ -24,10 +26,10 @@ const Navbar = () => {
           <div className="collapse navbar-collapse ms-5" id="navbarText">
             <ul className="navbar-nav text-white">
               <li className="nav-item px-2">
-                <NavLink className="nav-movies-link" aria-current="page" to='/' >Popular</NavLink>
+                <NavLink className="nav-movies-link" aria-current="page" onClick={() => setMovieCategory('popular')} to='/'>Popular</NavLink>
               </li>
               <li className="nav-item px-2">
-                <NavLink className="nav-movies-link" to='/top_rated'> Top Rated </NavLink>
+                <NavLink className="nav-movies-link" onClick={() => setMovieCategory('top_rated')} > Top Rated </NavLink>
               </li>
               <li className="nav-item px-2">
                 <NavLink className="nav-movies-link" href="/tv">Tv Shows</NavLink>
