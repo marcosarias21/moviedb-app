@@ -8,13 +8,14 @@ import imgContext from '../../providers/ImgHeroContext';
 const API_KEY = process.env.REACT_APP_SECRET_KEY;
 
 const Home = () => {
-  const { movieCategory } = useContext(urlContext);
-  console.log(movieCategory);
+  const { movieCategory, section } = useContext(urlContext);
+  console.log(section);
   const { image } = useContext(imgContext);
   const [dataMoviePopular, setDataMoviePopular] = useState([]);
   const [page, setPage] = useState(2);
-  const { data } = useFetch(`https://api.themoviedb.org/3/movie/${movieCategory}?api_key=${API_KEY}&language=en-US`);
-  const dataPage = useFetch(`https://api.themoviedb.org/3/movie/${movieCategory}?api_key=${API_KEY}&language=en-US&page=${page}`);
+  const { data } = useFetch(`https://api.themoviedb.org/3/${movieCategory}?api_key=${API_KEY}&language=en-US`);
+  console.log(data);
+  const dataPage = useFetch(`https://api.themoviedb.org/3/${movieCategory}?api_key=${API_KEY}&language=en-US&page=${page}`);
   useEffect(() => {
     if (data) {
       setDataMoviePopular(data.results);
