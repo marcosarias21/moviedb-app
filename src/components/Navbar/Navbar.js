@@ -1,28 +1,17 @@
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import setCategory from '../../helper/setCategory';
+import useScroll from '../../hooks/useScroll';
 import urlContext from '../../providers/UrlContext';
 import './navbar.scss';
 
 const Navbar = () => {
-  const [color, setColor] = useState(false);
   const { setMovieCategory, movieCategory } = useContext(urlContext);
+  const [show, setShow] = useState(false);
+  useScroll(show, setShow);
   const { section } = setCategory(movieCategory);
-  useEffect(() => {
-    const changeColor = () => {
-      if (window.scrollY >= 90) {
-        setColor(true);
-      } else {
-        setColor(false);
-      }
-    };
-    return () => {
-      window.addEventListener('scroll', changeColor);
-    };
-  }, [color]);
-
   return (
-    <div className={color ? 'header-active' : 'header'}>
+    <div className={show ? 'header-active' : 'header'}>
       <nav className="navbar navbar-expand-lg">
         <div className="container container-fluid d-flex justify-content-center">
           <a className="navbar-brand text-white" href="#"><span>MovieDB</span> - Arias</a>

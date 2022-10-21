@@ -1,10 +1,11 @@
 import { useContext, useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
-import useFetch from '../../hooks/useFetch';
+import { Layout } from '../../components/Layout';
 import MovieItems from '../../components/MoviesItems/MovieItems';
-import urlContext from '../../providers/UrlContext';
 import Hero from '../../components/Hero/Hero';
+import useFetch from '../../hooks/useFetch';
+import urlContext from '../../providers/UrlContext';
 import imgContext from '../../providers/ImgHeroContext';
+import Container from '../../components/Container/Container';
 
 const API_KEY = process.env.REACT_APP_SECRET_KEY;
 
@@ -28,20 +29,20 @@ const Home = () => {
   };
 
   return (
-    <motion.section initial={{ width: 0 }} animate={{ width: '100%' }} exit={{ x: window.innerWidth, transition: { duration: 0.2 } }}>
+    <Layout>
       <Hero image={image} />
-      <div className='d-flex justify-content-center flex-wrap'>
+      <Container>
         {
           dataMoviePopular?.map((dataMovie, index) => (
           <MovieItems key={index} {...dataMovie}
          />
           ))
         }
-      </div>
-      <div className='d-flex justify-content-center my-5'>
+      </Container>
+      <Container>
         <button onClick={handleLoad} className='btn btn-primary'> Load More </button>
-      </div>
-    </motion.section>
+      </Container>
+    </Layout>
   );
 };
 
