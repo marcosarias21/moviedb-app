@@ -6,16 +6,19 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { UrlProvider } from './providers/UrlContext';
 import { ImgProvider } from './providers/ImgHeroContext';
+import { DataProvider } from './providers/DataGlobalContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
+    <DataProvider>
       <UrlProvider>
         <ImgProvider>
           <App />
         </ImgProvider>
       </UrlProvider>
+    </DataProvider>
     </BrowserRouter>
   </React.StrictMode>,
 );
