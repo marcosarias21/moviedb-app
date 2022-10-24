@@ -4,7 +4,6 @@ import { NavLink } from 'react-router-dom';
 import imgContext from '../../providers/ImgHeroContext';
 import './moviepopular.scss';
 
-/* eslint-disable camelcase */
 const MovieItems = ({
   id, title, poster_path, release_date, vote_average, backdrop_path,
 }) => {

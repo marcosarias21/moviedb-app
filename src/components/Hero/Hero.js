@@ -1,4 +1,3 @@
-/* eslint-disable camelcase */
 import { motion } from 'framer-motion';
 import './hero.scss';
 
