@@ -6,35 +6,38 @@ import useFetch from '../../hooks/useFetch';
 import urlContext from '../../providers/UrlContext';
 import imgContext from '../../providers/ImgHeroContext';
 import Container from '../../components/Container/Container';
+import SearchBar from '../../components/SearchBar/SearchBar';
+import dataContext from '../../providers/DataGlobalContext';
 
 const API_KEY = process.env.REACT_APP_SECRET_KEY;
 
 const Home = () => {
-  const { movieCategory } = useContext(urlContext);
+  const { movieCategory, section } = useContext(urlContext);
+  const { dataMovie, setDataMovie, searchData } = useContext(dataContext);
   const { image } = useContext(imgContext);
-  const [dataMoviePopular, setDataMoviePopular] = useState([]);
   const [page, setPage] = useState(2);
   const { data } = useFetch(`https://api.themoviedb.org/3/${movieCategory}?api_key=${API_KEY}&language=en-US`);
   const dataPage = useFetch(`https://api.themoviedb.org/3/${movieCategory}?api_key=${API_KEY}&language=en-US&page=${page}`);
-
+  const dataSearch = useFetch(`https://api.themoviedb.org/3/search/${section}?api_key=${API_KEY}&language=en-US&query=${searchData}&include_adult=false`);
   useEffect(() => {
     if (data) {
-      setDataMoviePopular(data.results);
+      setDataMovie(data.results);
     }
   }, [data]);
 
   const handleLoad = () => {
     setPage(page + 1);
-    setDataMoviePopular([...dataMoviePopular, ...dataPage.data.results]);
+    setDataMovie([...dataMovie, ...dataPage.data.results]);
   };
 
   return (
     <Layout>
       <Hero image={image} />
+      <SearchBar API_KEY={API_KEY} section={section} dataSearch={dataSearch} dataMovie={dataMovie}/>
       <Container>
         {
-          dataMoviePopular?.map((dataMovie, index) => (
-          <MovieItems key={index} {...dataMovie}
+          dataMovie?.map((movie, index) => (
+          <MovieItems key={index} {...movie}
          />
           ))
         }

@@ -12,9 +12,11 @@ const App = () => {
     <AnimatePresence>
       <Routes location={location} key={location.key}>
           <Route path='/' element={<Home />} />
-          <Route path='detail/:id' element={<Detail />} />
+          <Route path='/toprated' element={<Home />} />
           <Route path='/tv' element={<Home />} />
+          <Route path='detail/:id' element={<Detail />} />
           <Route path='/tv/detail/:id' element={<Detail />} />
+          <Route path='/toprated/detail/:id' element={<Detail />} />
       </Routes>
     </AnimatePresence>
    </>

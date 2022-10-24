@@ -24,7 +24,7 @@ const Navbar = () => {
                 <NavLink className="nav-movies-link" aria-current="page" onClick={() => setMovieCategory('movie/popular')} to='/'>Popular</NavLink>
               </li>
               <li className="nav-item px-2">
-                <NavLink className="nav-movies-link" onClick={() => setMovieCategory('movie/top_rated')} > Top Rated </NavLink>
+                <NavLink className="nav-movies-link" onClick={() => setMovieCategory('movie/top_rated')} to='/toprated' > Top Rated </NavLink>
               </li>
               <li className="nav-item px-2">
                 <NavLink className="nav-movies-link" onClick={() => setMovieCategory('tv/popular')} to='/tv' >Tv Shows</NavLink>
