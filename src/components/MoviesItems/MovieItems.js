@@ -11,8 +11,8 @@ const MovieItems = ({
   const img = `https://image.tmdb.org/t/p/w300/${poster_path}`;
   return (
     <>
-      <motion.div key={id} initial={{ opacity: 0 }} animate={{ opacity: 1 }} whileHover={{ scale: 1.1 }} className="my-2 pb-5" onMouseEnter={() => setImage(backdrop_path)}>
-        <div className='card-movies mx-3'>
+      <motion.div key={id} initial={{ opacity: 0 }} animate={{ opacity: 1 }} whileHover={{ scale: 1.1 }} className="my-2 pb-5 row" onMouseEnter={() => setImage(backdrop_path)}>
+        <div className='card-movies mx-3 col-sm-12 col-md-12 col-lg-4'>
           <NavLink to={`detail/${id}`}>
             <img className='img-size' src={img} alt={img}/>
           </NavLink>
