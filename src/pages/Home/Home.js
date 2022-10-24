@@ -29,7 +29,7 @@ const Home = () => {
     setPage(page + 1);
     setDataMovie([...dataMovie, ...dataPage.data.results]);
   };
-
+  console.log(dataMovie);
   return (
     <Layout>
       <Hero image={image} />
