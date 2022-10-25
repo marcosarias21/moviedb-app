@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useContext } from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import imgContext from '../../providers/ImgHeroContext';
 import './moviepopular.scss';
 
@@ -13,9 +13,9 @@ const MovieItems = ({
     <>
       <motion.div key={id} initial={{ opacity: 0 }} animate={{ opacity: 1 }} whileHover={{ scale: 1.1 }} className="my-2 ms-1 pb-5 row" onMouseEnter={() => setImage(backdrop_path)}>
         <div className='card-movies mx-3 col-sm-12 col-md-12 col-lg-4'>
-          <a href={`detail/${id}`}>
-            <img className='img-size' src={img} alt={img}/>
-          </a>
+            <Link to={`detail/${id}`}>
+              <img className='img-size' src={img} alt={img}/>
+            </Link>
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }} className='text-center'>
             <h5 className="fw-bold"> {title || name}  </h5>
             <span>⭐{vote_average} |  📅{release_date} </span>

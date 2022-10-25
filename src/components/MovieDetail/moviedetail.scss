@@ -14,8 +14,7 @@
     margin: 0px;
     padding: 0px;
     margin-top: 100px;
-    height: 35rem;
-    
+    height: 35rem;    
     .info{     
       background-color: rgba(0, 0, 0, 0.233);
       span{
@@ -51,6 +50,25 @@
           .span-style{
             display: none;
         }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 401px) and (max-width: 1023px) {
+  .section-detail{
+    background-position: 50%;
+    width: 100%;
+    .items-container{
+      width: 100%;
+      padding: 0px 10px;
+      .info{
+        span{
+          display: none;
+        }
+        p{
+          text-align: justify;
         }
       }
     }
