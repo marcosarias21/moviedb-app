@@ -17,10 +17,18 @@
     color: $white;
     font-weight: bold;
     text-decoration: none;
+    &-activeNav{
+      @extend .nav-movies-link;
+      color: #FB2576;
+      text-decoration: wavy;
+      font-size: 19px;
+      transition: $transition;
+      
+    }
     &:hover {
       transition: $transition;
       opacity: 0.6;
-    }
+    }    
   }
 }
 @media (min-width: 424px) and (max-width:1023px) {

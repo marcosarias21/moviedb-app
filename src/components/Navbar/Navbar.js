@@ -10,6 +10,8 @@ const Navbar = () => {
   const [show, setShow] = useState(false);
   useScroll(show, setShow);
   const { section } = setCategory(movieCategory);
+  const classNameFunction = ({ isActive }) => (isActive ? 'nav-movies-link-activeNav' : 'nav-movies-link');
+
   return (
     <div className={show ? 'header-active' : 'header'}>
       <nav className="navbar navbar-expand-lg">
@@ -21,13 +23,13 @@ const Navbar = () => {
           <div className="collapse navbar-collapse ms-5" id="navbarText">
             <ul className="navbar-nav text-white">
               <li className="nav-item px-2">
-                <NavLink className="nav-movies-link" aria-current="page" onClick={() => setMovieCategory('movie/popular')} to='/'>Popular</NavLink>
+                <NavLink className={classNameFunction} aria-current="page" onClick={() => setMovieCategory('movie/popular')} to='/popular' >Popular</NavLink>
               </li>
               <li className="nav-item px-2">
-                <NavLink className="nav-movies-link" onClick={() => setMovieCategory('movie/top_rated')} to='/toprated' > Top Rated </NavLink>
+                <NavLink className={classNameFunction} onClick={() => setMovieCategory('movie/top_rated')} to='/toprated' > Top Rated </NavLink>
               </li>
               <li className="nav-item px-2">
-                <NavLink className="nav-movies-link" onClick={() => setMovieCategory('tv/popular')} to='/tv' >Tv Shows</NavLink>
+                <NavLink className={classNameFunction} onClick={() => setMovieCategory('tv/popular')} to='/tv' >Tv Shows</NavLink>
               </li>
             </ul>
           </div>

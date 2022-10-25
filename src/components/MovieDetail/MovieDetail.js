@@ -25,17 +25,8 @@ const MovieDetail = ({
         <div className='info'>
           <div className='data-text'>
             <h1>{title}</h1>
-            {
-              !title && <h1>{original_name}</h1>
-            }
-            {
-              runtime
-              && <span className='span-style'>⭐{average} | {release_date} | Duration: {runtime } | {gen} </span>
-            }
-            {
-            number_of_episodes
-            && <span className='span-style'>⭐{average} | {release_date} Episodes: {number_of_episodes} | {gen} </span>
-            }
+             <h1>{original_name}</h1>
+            <span className='span-style'>⭐{average} | {release_date} Episodes: {number_of_episodes || runtime} | {gen} </span>
           </div>
           <p className='fw-bold'>{overview}</p>
             {!overview && <h1 className='mt-5'> Oh no! This movie/ does not have any overview </h1>}
