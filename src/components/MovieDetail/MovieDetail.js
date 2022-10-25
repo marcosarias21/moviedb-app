@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import './moviedetail.scss';
+import useAverage from '../../hooks/useAverage';
 
 const MovieDetail = ({
   backdrop_path, belong_to_collection, genres, original_language, overview, production_companies,
@@ -9,11 +10,7 @@ const MovieDetail = ({
 }) => {
   const background = `https://image.tmdb.org/t/p/original//${backdrop_path}`;
 
-  const average = new Intl.NumberFormat('default', {
-    style: 'percent',
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2,
-  }).format(vote_average / 10);
+  const average = useAverage({ vote_average });
   const gen = genres?.map(genr => genr.name).join(',');
 
   return (
