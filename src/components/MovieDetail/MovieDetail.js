@@ -14,12 +14,12 @@ const MovieDetail = ({
     minimumFractionDigits: 2,
     maximumFractionDigits: 2,
   }).format(vote_average / 10);
-
   const gen = genres?.map(genr => genr.name).join(',');
+
   return (
     <motion.section initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }} className='section-detail' style={{ backgroundImage: `url(${background})` }}>
       <div className='items-container d-flex justify-content-center'>
-        <motion.div initial={{ x: -2000 }} animate={{ x: 0 }} transition={{ type: 'linear', duration: 1 }} className='img-box-size'>
+        <motion.div initial={{ x: -2000 }} animate={{ x: 0 }} transition={{ type: 'linear', duration: 1 }}>
           <img className='img-size' src={`https://image.tmdb.org/t/p/w500//${poster_path}`} />
         </motion.div>
         <div className='info'>
@@ -37,7 +37,7 @@ const MovieDetail = ({
             && <span className='span-style'>⭐{average} | {release_date} Episodes: {number_of_episodes} | {gen} </span>
             }
           </div>
-          <p className='mt-5 fw-bold'>{overview}</p>
+          <p className='fw-bold'>{overview}</p>
             {!overview && <h1 className='mt-5'> Oh no! This movie/ does not have any overview </h1>}
         </div>
       </div>
