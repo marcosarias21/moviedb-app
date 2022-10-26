@@ -24,16 +24,14 @@ const Home = () => {
       setDataMovie(data.results);
     }
   }, [data]);
-
   const handleLoad = () => {
     setPage(page + 1);
     setDataMovie([...dataMovie, ...dataPage.data.results]);
   };
-  console.log(dataMovie);
   return (
     <Layout>
       <Hero image={image} />
-      <SearchBar API_KEY={API_KEY} section={section} dataSearch={dataSearch} dataMovie={dataMovie}/>
+      <SearchBar dataSearch={dataSearch} dataMovie={dataMovie}/>
       <Container>
         {
           dataMovie?.map((movie, index) => (

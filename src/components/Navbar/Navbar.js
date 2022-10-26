@@ -23,7 +23,7 @@ const Navbar = () => {
           <div className="collapse navbar-collapse ms-5" id="navbarText">
             <ul className="navbar-nav text-white">
               <li className="nav-item px-2">
-                <NavLink className={classNameFunction} aria-current="page" onClick={() => setMovieCategory('movie/popular')} to='/popular' >Popular</NavLink>
+                <NavLink className={classNameFunction} aria-current="page" to='/' end onClick={() => setMovieCategory('movie/popular')} >Popular</NavLink>
               </li>
               <li className="nav-item px-2">
                 <NavLink className={classNameFunction} onClick={() => setMovieCategory('movie/top_rated')} to='/toprated' > Top Rated </NavLink>
