@@ -1,6 +1,7 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
-const useScroll = (show, setShow) => {
+const useScroll = () => {
+  const [show, setShow] = useState(false);
   useEffect(() => {
     const changeColor = () => {
       if (window.scrollY >= 90) {
@@ -12,7 +13,7 @@ const useScroll = (show, setShow) => {
     return () => {
       window.addEventListener('scroll', changeColor);
     };
-  }, [show]);
+  }, []);
   return show;
 };
 export default useScroll;

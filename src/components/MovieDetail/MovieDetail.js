@@ -1,17 +1,14 @@
-import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import './moviedetail.scss';
 import useAverage from '../../hooks/useAverage';
 import Cast from '../Cast/Cast';
 
 const MovieDetail = ({
-  backdrop_path, belong_to_collection, genres, original_language, overview, production_companies,
-  credits, release_date, status, original_name, title, vote_average, vote_count, poster_path,
-  runtime, number_of_episodes,
+  backdrop_path, genres, overview, credits, release_date, original_name, title, vote_average,
+  poster_path, runtime, number_of_episodes,
 }) => {
   const background = `https://image.tmdb.org/t/p/original//${backdrop_path}`;
   const average = useAverage({ vote_average });
-  const gen = genres?.map(genr => genr.name).join(',');
 
   return (
     <>
@@ -24,7 +21,7 @@ const MovieDetail = ({
             <div className='data-text'>
               <h1>{title}</h1>
               <h1>{original_name}</h1>
-              <p>⭐{average} | {release_date} Episodes: {number_of_episodes || runtime} | {gen} </p>
+              <p>⭐{average} | {release_date} Episodes: {number_of_episodes || runtime} | {genres?.map(genr => genr.name).join(',')} </p>
               <p className='fw-bold'>{overview}</p>
             </div>
               {!overview && <h1 className='mt-5'> Oh no! This movie/ does not have any overview </h1>}
