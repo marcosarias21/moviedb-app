@@ -10,7 +10,7 @@ const SearchBar = ({ dataSearch, dataMovie }) => {
   };
   return (
     <Container>
-       <form className="w-25 my-5" role="search">
+       <form className="my-5 w-50" role="search">
         <input className="form-control me-2" onChange={handleChange} placeholder="Search" aria-label="Search" />
         {dataMovie.length === 0 && <h5 className='text-danger'> The series/movie was not found </h5>}
       </form>

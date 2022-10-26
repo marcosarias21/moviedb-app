@@ -40,8 +40,8 @@ const Home = () => {
           ))
         }
       </Container>
-      <Container>
-        <button onClick={handleLoad} className='btn btn-primary'> Load More </button>
+      <Container className='mb-3'>
+        <button onClick={handleLoad} className='btn btn-success'> Load More </button>
       </Container>
     </Layout>
   );
