@@ -28,7 +28,7 @@ const MovieDetail = ({
           </div>
         </div>
       </motion.section>
-      <section className='row'>
+      <section className='container'>
         <Cast {...credits} />
       </section>
     </>
