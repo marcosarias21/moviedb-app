@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import setCategory from '../../helper/setCategory';
 import useScroll from '../../hooks/useScroll';
@@ -7,8 +7,7 @@ import './navbar.scss';
 
 const Navbar = () => {
   const { setMovieCategory, movieCategory } = useContext(urlContext);
-  const [show, setShow] = useState(false);
-  useScroll(show, setShow);
+  const show = useScroll();
   const { section } = setCategory(movieCategory);
   const classNameFunction = ({ isActive }) => (isActive ? 'nav-movies-link-activeNav' : 'nav-movies-link');
 
