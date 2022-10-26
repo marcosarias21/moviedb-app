@@ -31,7 +31,7 @@ const Home = () => {
   return (
     <Layout>
       <Hero image={image} />
-      <SearchBar dataSearch={dataSearch} dataMovie={dataMovie}/>
+      <SearchBar dataSearch={dataSearch} dataMovie={dataMovie} section={section}/>
       <Container>
         {
           dataMovie?.map((movie, index) => (
