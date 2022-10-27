@@ -3,7 +3,7 @@ import { createContext, useState } from 'react';
 const imgContext = createContext();
 
 export const ImgProvider = ({ children }) => {
-  const [image, setImage] = useState();
+  const [image, setImage] = useState(null);
 
   const data = { image, setImage };
 

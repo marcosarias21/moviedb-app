@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 
 const Layout = ({ children }) => {
   return (
-  <motion.section initial={{ width: 0 }} animate={{ width: '100%' }} exit={{ x: window.innerWidth, transition: { duration: 0.2 } }}>
+  <motion.section initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
     {children}
   </motion.section>
   );
