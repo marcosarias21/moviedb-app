@@ -15,7 +15,7 @@ const MovieItems = ({
             <Link to={`detail/${id}`}>
               <img className='img-size' src={img} alt={img}/>
             </Link>
-          <ContainerAnimated transition={{ delay: 0.5 }} className='text-center'>
+          <ContainerAnimated transition={{ delay: 0.3 }} className='text-center'>
             <h5 className="fw-bold"> {title || name}  </h5>
             <span>⭐{vote_average} |  📅{release_date} </span>
           </ContainerAnimated>

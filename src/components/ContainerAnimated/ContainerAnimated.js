@@ -5,8 +5,10 @@ const ContainerAnimated = ({
 }) => {
   return (
     <motion.div
-    key={key} initial={{ opacity: 0 }}
-    animate={{ opacity: 1 }} whileHover={{ scale: 1.1 }}
+    key={key}
+    whileInView={{ opacity: 1 }}
+    initial={{ opacity: 0 }}
+    whileHover={{ scale: 1.1 }}
     className={className} onMouseEnter={onMouseEnter} transition={transition}>
       {children}
     </motion.div>

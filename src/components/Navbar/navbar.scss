@@ -6,7 +6,7 @@
   top: 0;
   width: 100%;
   opacity: 1;
-  background-color: rgba(0, 0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.13);
   transition: $transition;
   &-active {
     @extend .header;
@@ -19,7 +19,7 @@
     text-decoration: none;
     &-activeNav{
       @extend .nav-movies-link;
-      color: #FB2576;
+      color: #CF0A0A;
       text-decoration: wavy;
       font-size: 19px;
       transition: $transition;
