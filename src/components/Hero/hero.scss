@@ -18,3 +18,25 @@
     width: 100%;
     }       
 }
+
+
+@media (max-width: 450px)  {
+  .section-hero{
+    height: 50vh;
+    &::after{
+      position: absolute;
+      bottom: 273px;
+      }   
+  }
+  }
+
+
+  @media (max-width: 900px)  {
+    .section-hero{
+      height: 50vh;
+      &::after{
+        position: absolute;
+        bottom: 527px;
+        }   
+    }
+    }
