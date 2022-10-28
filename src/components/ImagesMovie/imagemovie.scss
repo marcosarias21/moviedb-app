@@ -16,3 +16,9 @@
     width: 300px;
   }
 }
+
+@media (min-width: 1024px) and (max-width: 1400px) {
+  .img-media-q {
+    width: 350px;
+  }
+}
