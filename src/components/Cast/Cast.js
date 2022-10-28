@@ -32,7 +32,7 @@ const Cast = ({ cast }) => {
       }}
       height='400px'
       modules={[Pagination]}
-      className="mySwiper"
+      className="mySwiper ms-5"
     >
       {data?.map(person => (
           <SwiperSlide key={person.id}>
