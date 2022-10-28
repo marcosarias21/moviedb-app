@@ -11,7 +11,8 @@ const Detail = () => {
   const { id } = useParams();
   const { section } = useContext(urlContext);
   const [detailMovieData, setDetailMovieData] = useState({});
-  const { data } = useFetch(`https://api.themoviedb.org/3/${section}/${id}?append_to_response=credits,videos,images&api_key=${API_KEY}&language=en-US`);
+  const { data } = useFetch(`https://api.themoviedb.org/3/${section}/${id}?append_to_response=credits,videos,images&api_key=${API_KEY}`);
+  console.log(data);
 
   useEffect(() => {
     setDetailMovieData(data);
