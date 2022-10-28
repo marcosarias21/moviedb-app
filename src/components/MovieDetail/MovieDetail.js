@@ -2,10 +2,11 @@ import { motion } from 'framer-motion';
 import './moviedetail.scss';
 import useAverage from '../../hooks/useAverage';
 import Cast from '../Cast/Cast';
+import ImageMovie from '../ImagesMovie/ImageMovie';
 
 const MovieDetail = ({
   backdrop_path, genres, overview, credits, release_date, original_name, title, vote_average,
-  poster_path, runtime, number_of_episodes,
+  poster_path, runtime, number_of_episodes, images,
 }) => {
   const background = `https://image.tmdb.org/t/p/original//${backdrop_path}`;
   const average = useAverage({ vote_average });
@@ -30,6 +31,9 @@ const MovieDetail = ({
       </motion.section>
       <section className='container'>
         <Cast {...credits} />
+      </section>
+      <section className='container'>
+        <ImageMovie {...images} />
       </section>
     </>
   );

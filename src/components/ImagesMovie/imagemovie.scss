@@ -1,0 +1,18 @@
+.img-media-q{
+  &:hover{
+    opacity: 0.5;
+    transition: 0.5s;
+  }
+}
+
+@media (max-width: 700px) {
+  .img-media-q{
+    width: 300px;
+  }
+}
+
+@media (min-width: 701px) and (max-width: 1023px) {
+  .img-media-q{
+    width: 300px;
+  }
+}
