@@ -13,21 +13,19 @@ const MovieDetail = ({
 
   return (
     <>
-      <motion.section initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }} className='section-detail' style={{ backgroundImage: `url(${background})` }}>
-        <div className='items-container d-flex justify-content-center'>
-          <motion.div initial={{ x: -2000 }} animate={{ x: 0 }} transition={{ type: 'linear', duration: 1 }}>
+      <motion.section initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }} className='section-detail container d-flex align-items-center' style={{ backgroundImage: `url(${background})` }}>
+       <div className='row justify-content-center box-content'>
+          <motion.div className='col-md-6' initial={{ x: -2000 }} animate={{ x: 0 }} transition={{ type: 'linear', duration: 1 }}>
             <img className='img-size' src={`https://image.tmdb.org/t/p/w500//${poster_path}`} />
           </motion.div>
-          <div className='info'>
-            <div className='data-text'>
-              <h1>{title}</h1>
-              <h1>{original_name}</h1>
-              <p>⭐{average} | {release_date} Episodes: {number_of_episodes || runtime} | {genres?.map(genr => genr.name).join(',')} </p>
-              <p className='fw-bold'>{overview}</p>
-            </div>
-              {!overview && <h1 className='mt-5'> Oh no! This movie/ does not have any overview </h1>}
+          <div className='data-text col-md-6'>
+            <h1>{title}</h1>
+            <h1>{original_name}</h1>
+            <p>⭐{average} | {release_date} Episodes: {number_of_episodes || runtime} | {genres?.map(genr => genr.name).join(',')} </p>
+            <p className='fw-bold'>{overview}</p>
+            {!overview && <h1 className='mt-5'> Oh no! This movie/ does not have any overview </h1>}
           </div>
-        </div>
+      </div>
       </motion.section>
       <section className='container'>
         <Cast {...credits} />
