@@ -25,7 +25,7 @@
     height: 50vh;
     &::after{
       position: absolute;
-      bottom: 273px;
+      bottom: 447px;
       }   
   }
   }
@@ -36,7 +36,17 @@
       height: 50vh;
       &::after{
         position: absolute;
-        bottom: 527px;
+        bottom: 439px;
+        }   
+    }
+    }
+
+    
+  @media (max-width: 1440px)  {
+    .section-hero{      
+      &::after{
+        position: absolute;
+        bottom: 84px;
         }   
     }
     }

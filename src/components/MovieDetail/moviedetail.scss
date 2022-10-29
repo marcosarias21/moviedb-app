@@ -2,8 +2,10 @@
   height: 100vh;
   background-size: cover;
   background-repeat: no-repeat;
-  border-bottom: 1px solid;    
+  border-bottom: 1px solid;
   .box-content{
+    text-align: justify;
+    background-color: rgba(0, 0, 0, 0.38); 
     box-shadow: -3px 4px 39px -5px rgba(0, 0, 0, 0.938);
   }}
 
@@ -25,6 +27,16 @@
 
     .img-size{
       width: 300px;
+    }
+  }
+}
+@media (min-width: 1025px) {
+  .section-detail{
+    width: 100%;
+    background-position: 50%;
+
+    .img-size{
+      width: 400px;
     }
   }
 }
