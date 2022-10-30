@@ -10,7 +10,6 @@ const setCategory = (movieCategory) => {
   } else if (movieCategory === 'tv/popular') {
     setSection('tv');
   }
-  console.log(section);
   return section;
 };
 

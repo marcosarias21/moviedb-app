@@ -24,6 +24,7 @@ const MovieDetail = ({
             <p>⭐{average} | {release_date} Episodes: {number_of_episodes || runtime} | {genres?.map(genr => genr.name).join(',')} </p>
             <p className='fw-bold'>{overview}</p>
             {!overview && <h1 className='mt-5'> Oh no! This movie/ does not have any overview </h1>}
+            <p>{ }</p>
           </div>
       </div>
       </motion.section>
