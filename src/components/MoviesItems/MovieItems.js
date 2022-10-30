@@ -5,7 +5,7 @@ import ContainerAnimated from '../ContainerAnimated/ContainerAnimated';
 import './moviepopular.scss';
 
 const MovieItems = ({
-  id, title, poster_path, release_date, vote_average, backdrop_path, name,
+  id, title, poster_path, release_date, vote_average, backdrop_path, name, first_air_date,
 }) => {
   const { setImage } = useContext(imgContext);
   const img = `https://image.tmdb.org/t/p/w300/${poster_path}`;
@@ -17,7 +17,7 @@ const MovieItems = ({
             </Link>
           <ContainerAnimated transition={{ delay: 0.3 }} className='text-center'>
             <h5 className="fw-bold"> {title || name}  </h5>
-            <span>⭐{vote_average} |  📅{release_date} </span>
+            <span>⭐{vote_average} |  📅{release_date || first_air_date } </span>
           </ContainerAnimated>
         </div>
     </ContainerAnimated>
