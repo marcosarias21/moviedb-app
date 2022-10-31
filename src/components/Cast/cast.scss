@@ -1,6 +1,18 @@
-.img-size-swiper{
-  height: 376px;
-}
 .swiper-pagination-bullet{
   background-color: white;
 }
+.swiper-wrapper{
+  height: 430px;
+  .img-size-swiper{
+    height: 376px;
+  }
+}
+
+@media (min-width: 1023px) and (max-width: 1439px){
+  .swiper-wrapper{
+    height: 350px;
+    .img-size-swiper{
+      height: 306px;
+    }
+  }
+}  
