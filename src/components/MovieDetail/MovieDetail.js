@@ -2,15 +2,17 @@ import { motion } from 'framer-motion';
 import './moviedetail.scss';
 import useAverage from '../../hooks/useAverage';
 import Cast from '../Cast/Cast';
+import ModalTrailer from '../ModalTrailer/ModalTrailer';
 import ImageMovie from '../ImagesMovie/ImageMovie';
 
 const MovieDetail = ({
   backdrop_path, genres, overview, credits, release_date, original_name, title, vote_average,
-  poster_path, runtime, number_of_episodes, images,
+  poster_path, runtime, number_of_episodes, images, videos,
 }) => {
   const background = `https://image.tmdb.org/t/p/original//${backdrop_path}`;
+  if (!images) return null;
   const average = useAverage({ vote_average });
-  console.log(credits);
+  console.log(videos);
 
   return (
     <>
@@ -28,12 +30,13 @@ const MovieDetail = ({
           <h5 className='mt-4 mb-3'> Crew </h5>
           <div className='d-flex'>
             { credits?.crew?.slice(0, 3).map(person => (
-            <div className='me-3' key={person.id}>
+            <div className='me-3' key={person.job}>
               <h6>{person.name}</h6>
               <p>{person.job}</p>
             </div>))}
           </div>
-          <button className='btn btn-primary'> Play Trailer!</button>
+          <button type="button" className="btn btn-success p-3" data-bs-toggle="modal" data-bs-target="#exampleModal"> Play Trailer! </button>
+          <ModalTrailer {...videos} />
         </div>
       </div>
       </motion.section>
