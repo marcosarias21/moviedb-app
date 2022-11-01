@@ -4,7 +4,6 @@ import { MovieDetail } from '../../components/MovieDetail';
 import useFetch from '../../hooks/useFetch';
 import urlContext from '../../providers/UrlContext';
 import { Layout } from '../../components/Layout';
-import useCast from '../../hooks/useCast';
 
 const API_KEY = process.env.REACT_APP_SECRET_KEY;
 

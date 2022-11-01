@@ -41,7 +41,7 @@ const Home = () => {
         }
       </Container>
       <Container className='mb-3'>
-        <button onClick={handleLoad} className='btn btn-outline-light'> Load More </button>
+        <button onClick={handleLoad} disabled={searchData && true} className='btn btn-outline-light'> Load More </button>
       </Container>
     </Layout>
   );
