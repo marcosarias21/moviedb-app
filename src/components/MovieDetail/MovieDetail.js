@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import './moviedetail.scss';
 import useAverage from '../../hooks/useAverage';
@@ -11,8 +12,8 @@ const MovieDetail = ({
 }) => {
   const background = `https://image.tmdb.org/t/p/original//${backdrop_path}`;
   if (!images) return null;
+  const [isOpen, setIsOpen] = useState(false);
   const average = useAverage({ vote_average });
-  console.log(videos);
 
   return (
     <>
@@ -35,8 +36,8 @@ const MovieDetail = ({
               <p>{person.job}</p>
             </div>))}
           </div>
-          <button type="button" className="btn btn-success p-3" data-bs-toggle="modal" data-bs-target="#exampleModal"> Play Trailer! </button>
-          <ModalTrailer {...videos} />
+          <button type="button" onClick={() => setIsOpen(true)} className="btn btn-success p-3" data-bs-toggle="modal" data-bs-target="#exampleModal"> Play Trailer! </button>
+          <ModalTrailer {...videos} isOpen={isOpen} setIsOpen={setIsOpen} />
         </div>
       </div>
       </motion.section>

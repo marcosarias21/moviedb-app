@@ -36,17 +36,17 @@
       height: 50vh;
       &::after{
         position: absolute;
-        bottom: 439px;
+        bottom: 319px;
         }   
     }
     }
 
     
-  @media (max-width: 1440px)  {
+  @media (min-width: 1023px) and (max-width: 1440px)  {
     .section-hero{      
       &::after{
         position: absolute;
-        bottom: 84px;
+        bottom: 64px;
         }   
     }
     }
