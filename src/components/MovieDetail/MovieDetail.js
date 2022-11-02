@@ -10,8 +10,8 @@ const MovieDetail = ({
   backdrop_path, genres, overview, credits, release_date, original_name, title, vote_average,
   poster_path, runtime, number_of_episodes, images, videos,
 }) => {
-  const background = `https://image.tmdb.org/t/p/original//${backdrop_path}`;
   if (!images) return null;
+  const background = `https://image.tmdb.org/t/p/original//${backdrop_path}`;
   const [isOpen, setIsOpen] = useState(false);
   const average = useAverage({ vote_average });
 
