@@ -10,6 +10,7 @@ const MovieDetail = ({
   backdrop_path, genres, overview, credits, release_date, original_name, title, vote_average,
   poster_path, runtime, number_of_episodes, images, videos,
 }) => {
+  console.log(credits);
   if (!images) return null;
   const background = `https://image.tmdb.org/t/p/original//${backdrop_path}`;
   const [isOpen, setIsOpen] = useState(false);
@@ -26,8 +27,7 @@ const MovieDetail = ({
           <motion.div initial={{ opacity: 0, y: -300 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 1 }} className='data-text col-md-6 col-lg-5'>
             <h1>{title || original_name}</h1>
             <p>⭐{average} | {release_date} Episodes: {number_of_episodes || runtime} | {genres?.map(genr => genr.name).join(',')}</p>
-            <p>{overview}</p>
-            {!overview && <h1 className='mt-5'> Oh no! This movie/ does not have any overview </h1>}
+            {overview ? <p>{overview}</p> : <h1 className='mt-5 text-danger'> Oh no! This serie does not have overview </h1>}
             <h5 className='mt-4 mb-3'>Crew</h5>
             <motion.div initial={{ opacity: 0, y: -100 }} animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.6 }} className='d-flex'>
@@ -36,16 +36,16 @@ const MovieDetail = ({
                 <h6>{person.name}</h6>
                 <p>{person.job}</p>
               </div>))}
+              {credits?.crew.length === 0
+              && <h5 className='text-danger'> Error! This serie does not have any Crew </h5>}
             </motion.div>
-            <motion.button initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.2 }} type="button" onClick={() => setIsOpen(true)} className="btn btn-success p-3" data-bs-toggle="modal" data-bs-target="#exampleModal"> Play Trailer! </motion.button>
+            <motion.button initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.2 }} type="button" onClick={() => setIsOpen(true)} className="btn btn-outline-light p-3" data-bs-toggle="modal" data-bs-target="#exampleModal"> Play Trailer! </motion.button>
             <ModalTrailer {...videos} isOpen={isOpen} setIsOpen={setIsOpen} />
           </motion.div>
         </div>
       </motion.section>
       <section className='container'>
         <Cast {...credits} />
-      </section>
-      <section className='container'>
         <ImageMovie {...images} />
       </section>
     </>
