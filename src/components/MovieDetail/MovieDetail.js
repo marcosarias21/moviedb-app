@@ -21,7 +21,7 @@ const MovieDetail = ({
       <motion.section initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }} className='section-detail container d-flex align-items-center'
        style={{ backgroundImage: `url(${background})` }}>
         <div className='row justify-content-center box-content'>
-          <motion.div className='col-md-6 col-lg-5' initial={{ opacity: 0, x: -500 }} animate={{ x: 0, opacity: 1 }} transition={{ type: 'linear', duration: 1.5 }}>
+          <motion.div className='d-none d-sm-block d-sm-none d-md-block col-md-6 col-lg-5' initial={{ opacity: 0, x: -500 }} animate={{ x: 0, opacity: 1 }} transition={{ type: 'linear', duration: 1.5 }}>
             <img className='img-size' src={`https://image.tmdb.org/t/p/w500//${poster_path}`} />
           </motion.div>
           <motion.div initial={{ opacity: 0, y: -300 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 1 }} className='data-text col-md-6 col-lg-5'>
