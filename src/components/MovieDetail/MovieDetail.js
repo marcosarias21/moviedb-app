@@ -14,7 +14,7 @@ const MovieDetail = ({
   if (!images) return null;
   const background = `https://image.tmdb.org/t/p/original//${backdrop_path}`;
   const [isOpen, setIsOpen] = useState(false);
-  const average = useAverage({ vote_average });
+  const average = useAverage(vote_average);
 
   return (
     <>

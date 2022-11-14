@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-const useAverage = ({ vote_average }) => {
+const useAverage = (vote_average) => {
   const [average, setAverage] = useState('');
   useEffect(() => {
     setAverage(new Intl.NumberFormat('default', {
