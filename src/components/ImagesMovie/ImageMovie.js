@@ -6,7 +6,7 @@ import './imagemovie.scss';
 const ImageMovie = ({ backdrops }) => {
   const data = useCast([backdrops]);
   return (
-      <div className="row gx-0 mb-5">
+      <div className="row mb-5">
         <h2 className='text-center'> Images </h2>
         {data?.map((backdrop, i) => (
         <motion.div
