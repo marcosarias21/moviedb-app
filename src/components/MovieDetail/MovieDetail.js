@@ -10,7 +10,7 @@ const MovieDetail = ({
   backdrop_path, genres, overview, credits, release_date, original_name, title, vote_average,
   poster_path, runtime, number_of_episodes, images, videos,
 }) => {
-  console.log(credits);
+  console.log(poster_path);
   if (!images) return null;
   const background = `https://image.tmdb.org/t/p/original//${backdrop_path}`;
   const [isOpen, setIsOpen] = useState(false);
@@ -23,6 +23,7 @@ const MovieDetail = ({
         <div className='row justify-content-center box-content'>
           <motion.div className='d-none d-sm-block d-sm-none d-md-block col-md-6 col-lg-5' initial={{ opacity: 0, x: -500 }} animate={{ x: 0, opacity: 1 }} transition={{ type: 'linear', duration: 1.5 }}>
             <img className='img-size' src={`https://image.tmdb.org/t/p/w500//${poster_path}`} />
+            {!poster_path && <h1> Img not found </h1>}
           </motion.div>
           <motion.div initial={{ opacity: 0, y: -300 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 1 }} className='data-text col-md-6 col-lg-5'>
             <h1>{title || original_name}</h1>

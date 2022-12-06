@@ -9,7 +9,7 @@
     box-shadow: -3px 4px 39px -5px rgba(0, 0, 0, 0.938);
   }}
 
-@media (max-width: 425px) {
+@media (max-width: 499px) {
   .section-detail{
     width: 100%;
     background-position: 50%;
@@ -26,16 +26,29 @@
     background-position: 50%;
 
     .img-size{
+      height: 100%;
       width: 90%;
     }
   }
 }
-@media (min-width: 1025px) {
+@media (min-width: 1025px) and (max-width: 1200px) {
   .section-detail{
     width: 100%;
     background-position: 50%;
 
     .img-size{
+      height: 100%;
+      width: 90%;
+    }
+  }
+}
+@media (min-width: 1201px) {
+  .section-detail{
+    width: 100%;
+    background-position: 50%;
+
+    .img-size{
+      height: 100%;
       width: 80%;
     }
   }
