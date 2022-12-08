@@ -1,15 +1,14 @@
 /* eslint-disable import/no-unresolved */
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper';
-import 'swiper/css';
 import 'swiper/css/pagination';
-import './cast.scss';
-
+import 'swiper/css';
 import useCast from '../../hooks/useCast';
-import ContainerAnimated from '../ContainerAnimated/ContainerAnimated';
+import './cast.scss';
 
 const Cast = ({ cast }) => {
   const data = useCast([cast]);
+  console.log(data);
   return (
     <div className='container my-5'>
       <h2 className='text-center'>Cast</h2>
@@ -32,19 +31,12 @@ const Cast = ({ cast }) => {
         }}
         height='400px'
         modules={[Pagination]}
-        className="mySwiper ms-5"
+        className="mySwiper"
       >
         {data?.map(person => (
-          <SwiperSlide key={person.id}>
-            <ContainerAnimated transition={{ delay: 0.3, duration: 0.8 }} className='row gx-0'>
-              <div className='col-3 gx-0'>
-                <img className='img-size-swiper' src={`https://image.tmdb.org/t/p/w300/${person.profile_path}`}/>
-                {!person.profile_path && <h2 className='text-danger'> Image not found </h2>}
-              </div>
-              <div>
-                <h5>{person?.name}</h5>
-              </div>
-            </ContainerAnimated>
+          <SwiperSlide className='d-flex justify-content-center' key={person.id}>
+            <img className='img-size-swiper' src={`https://image.tmdb.org/t/p/w300/${person.profile_path}`}/>
+            {!person.profile_path && <h2 className='text-danger'> Image not found </h2>}
           </SwiperSlide>
         ))}
         </Swiper>
