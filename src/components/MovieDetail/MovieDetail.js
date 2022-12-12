@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import './moviedetail.scss';
 import useAverage from '../../hooks/useAverage';
-import Cast from '../Cast/Cast';
-import ModalTrailer from '../ModalTrailer/ModalTrailer';
-import ImageMovie from '../ImagesMovie/ImageMovie';
+import { Cast } from '../Cast';
+import { ModalTrailer } from '../ModalTrailer';
+import { ImageMovie } from '../ImagesMovie';
+import './moviedetail.scss';
 
 const MovieDetail = ({
   backdrop_path, genres, overview, credits, release_date, original_name, title, vote_average,
