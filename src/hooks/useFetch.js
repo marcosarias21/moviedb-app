@@ -9,6 +9,11 @@ const useFetch = (url) => {
   });
 
   const getData = async () => {
+    setDataFetch({
+      data: null,
+      loading: true,
+      error: null,
+    });
     const { data } = await axios(url);
     setDataFetch({
       data,

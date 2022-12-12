@@ -1,8 +1,9 @@
 import { motion } from 'framer-motion';
+import './layout.scss';
 
 const Layout = ({ children }) => {
   return (
-  <motion.section initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+  <motion.section className='layout-content' initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
     {children}
   </motion.section>
   );

@@ -1,6 +1,6 @@
 import { useContext } from 'react';
+import { Container } from '../Container';
 import dataContext from '../../providers/DataGlobalContext';
-import Container from '../Container/Container';
 
 const SearchBar = ({ dataSearch, dataMovie, section }) => {
   const { setDataMovie, setSearchData } = useContext(dataContext);
