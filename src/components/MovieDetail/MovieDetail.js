@@ -10,7 +10,6 @@ const MovieDetail = ({
   backdrop_path, genres, overview, credits, release_date, original_name, title, vote_average,
   poster_path, runtime, number_of_episodes, images, videos,
 }) => {
-  console.log(poster_path);
   if (!images) return null;
   const background = `https://image.tmdb.org/t/p/original//${backdrop_path}`;
   const [isOpen, setIsOpen] = useState(false);
@@ -27,7 +26,7 @@ const MovieDetail = ({
           </motion.div>
           <motion.div initial={{ opacity: 0, y: -300 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 1 }} className='data-text col-md-6 col-lg-5'>
             <h1>{title || original_name}</h1>
-            <p>⭐{average} | {release_date} Episodes: {number_of_episodes || runtime} | {genres?.map(genr => genr.name).join(',')}</p>
+            <p>⭐{average} | {release_date} | {runtime ? <span>Duration: {runtime} </span> : <span> Episodes: {number_of_episodes}</span> } {genres?.map(genr => genr.name).join(',')}</p>
             {overview ? <p>{overview}</p> : <h1 className='mt-5 text-danger'> Oh no! This serie does not have overview </h1>}
             <h5 className='mt-4 mb-3'>Crew</h5>
             <motion.div initial={{ opacity: 0, y: -100 }} animate={{ y: 0, opacity: 1 }}

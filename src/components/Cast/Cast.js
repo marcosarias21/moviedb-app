@@ -8,7 +8,6 @@ import './cast.scss';
 
 const Cast = ({ cast }) => {
   const data = useCast([cast]);
-  console.log(data);
   return (
     <div className='container my-5'>
       <h2 className='text-center'>Cast</h2>
