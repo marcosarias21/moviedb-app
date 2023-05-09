@@ -1,8 +1,11 @@
+@font-face {
+  font-family: 'Satoshi';
+  src: url('../assets/fonts/Satoshi-Variable.ttf');
+}
 $tw-bg-opacity: 1;
 $color: #0f0f0f;
 $lightwhite: #D1D5DB;
 $white: #EFEFEF;
-$font-family: system-ui;
 $transition: .32s ease-in-out;
 $shadow: 1px 3px 14px 0px rgba(0,0,0,0.75);
 $borderColor: #B2B2B2;
@@ -10,6 +13,5 @@ $borderColor: #B2B2B2;
 body{
   background-color: $color;
   color: $white;
-  font-family: $font-family;
-  letter-spacing: 0.9px;
+  font-family: 'Satoshi';
 }

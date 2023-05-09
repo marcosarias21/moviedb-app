@@ -1,12 +1,19 @@
 .section-detail{
-  height: 100vh;
+  height: 70vh;
+  position: relative;
   background-size: cover;
   background-repeat: no-repeat;
   border-bottom: 1px solid;
   .box-content{
+    position: absolute;
+    top: 500px;
     text-align: justify;
     background-color: rgba(0, 0, 0, 0.38); 
     box-shadow: -3px 4px 39px -5px rgba(0, 0, 0, 0.938);
+    .img-size{
+      border-radius: 20px;
+      width: 100%;
+    }
   }}
 
 @media (max-width: 499px) {
