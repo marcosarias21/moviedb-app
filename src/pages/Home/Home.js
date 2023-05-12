@@ -9,7 +9,6 @@ import { Container } from '../../components/Container';
 import { SearchBar } from '../../components/SearchBar';
 import { MovieItems } from '../../components/MoviesItems';
 import { Spinner } from '../../components/Spinner';
-import { ContainerAnimated } from '../../components/ContainerAnimated';
 
 const API_KEY = process.env.REACT_APP_SECRET_KEY;
 
@@ -35,16 +34,16 @@ const Home = () => {
   return (
     <Layout>
       <Hero image={image} />
-      <SearchBar dataSearch={dataSearch} dataMovie={dataMovie} section={section}/>
       <section className='container-fluid'>
         <div className="row justify-content-center">
 
           { loading ? <Spinner />
             : dataMovie?.map((movie, index) => (
-            <MovieItems dataPage={dataPage.loading} loading={loading} key={index} {...movie}
+            <MovieItems key={index} {...movie}
           />
             ))
           }
+          { dataPage.loading && <div className='text-center mb-1'><Spinner /></div> }
         </div>
       </section>
       <Container className='mb-3'>
