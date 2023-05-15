@@ -1,0 +1,11 @@
+.form-control{
+  background-color: transparent;
+  border-radius: 2px;
+  transition: all 0.2s;
+  &:focus{
+    transition: all 0.2s;
+    border: 1px solid gray;
+    box-shadow: none;
+    background-color: #F5F5F5;
+   }
+}

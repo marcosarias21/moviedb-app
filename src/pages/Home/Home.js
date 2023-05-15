@@ -15,6 +15,7 @@ const API_KEY = process.env.REACT_APP_SECRET_KEY;
 const Home = () => {
   const { movieCategory, section } = useContext(urlContext);
   const { dataMovie, setDataMovie, searchData } = useContext(dataContext);
+  console.log(searchData);
   const { image } = useContext(imgContext);
   const [page, setPage] = useState(2);
   const { data, loading } = useFetch(`https://api.themoviedb.org/3/${movieCategory}?api_key=${API_KEY}&language=en-US`);
@@ -31,6 +32,10 @@ const Home = () => {
       setDataMovie(data.results);
     }
   }, [data]);
+  useEffect(() => {
+    setDataMovie(dataSearch?.data?.results);
+  }, [searchData]);
+
   return (
     <Layout>
       <Hero image={image} />
