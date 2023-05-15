@@ -9,7 +9,7 @@ import { SearchBar } from '../SearchBar';
 const Navbar = () => {
   const { setMovieCategory, movieCategory } = useContext(urlContext);
   const show = useScroll();
-  const { section } = setCategory(movieCategory);
+  const section = setCategory(movieCategory);
   const classNameFunction = ({ isActive }) => (isActive ? 'nav-movies-link-activeNav' : 'nav-movies-link');
 
   return (
@@ -22,8 +22,8 @@ const Navbar = () => {
               <span className="navbar-toggler-icon"></span>
             </button>
           </div>
-          <div>
-            <SearchBar />
+          <div className='w-50'>
+            <SearchBar section={section} />
           </div>
           <div className="collapse navbar-collapse flex-grow-0 ms-5" id="navbarText">
             <ul className="navbar-nav text-white">

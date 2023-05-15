@@ -1,12 +1,13 @@
 import { useContext } from 'react';
 import { Container } from '../Container';
 import dataContext from '../../providers/DataGlobalContext';
+import './searchbar.scss';
 
-const SearchBar = ({ dataSearch, dataMovie, section }) => {
-  const { setDataMovie, setSearchData } = useContext(dataContext);
+const SearchBar = ({ section }) => {
+  const { setSearchData, dataMovie } = useContext(dataContext);
   const handleChange = (e) => {
+    console.log(e.target.value);
     setSearchData(e.target.value);
-    setDataMovie(dataSearch.data.results);
   };
   return (
     <Container>
