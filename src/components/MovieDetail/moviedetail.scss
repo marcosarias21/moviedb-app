@@ -8,35 +8,48 @@
     position: absolute;
     top: 500px;
     text-align: justify;
-    background-color: rgba(0, 0, 0, 0.38); 
-    box-shadow: -3px 4px 39px -5px rgba(0, 0, 0, 0.938);
+    background-color: rgba(0, 0, 0, 0); 
     .img-size{
       border-radius: 20px;
       width: 100%;
     }
-  }}
+  }
+}
+.spacing-section{
+  margin-top: 300px;
+  z-index: 0;
+}
 
 @media (max-width: 499px) {
   .section-detail{
+    height: 100vh;
+    position: relative;
     width: 100%;
     background-position: 50%;
-
-    .img-size{
-      display: none;
+    .box-content{
+      position: relative;
+      top: 0;
+      .img-size{
+        display: none;
+      }
     }
   }
-  }
+  .spacing-section{
+    margin-top: 0px;
+  }  
+}
 
 @media (min-width: 500px) and (max-width: 1024px) {
   .section-detail{
     width: 100%;
     background-position: 50%;
-
     .img-size{
-      height: 100%;
-      width: 90%;
+      width: 100%;
     }
   }
+  .spacing-section{
+    margin-top: 350px;
+  }  
 }
 @media (min-width: 1025px) and (max-width: 1200px) {
   .section-detail{
